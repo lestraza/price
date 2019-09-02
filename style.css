@@ -8,7 +8,8 @@ html, body, div {
     max-width: 960px;          
     padding-top: 20px;
 }
-input[type="text"] {
+input[type="text"], 
+input[type="password"] {
     min-height: 30px;
     padding: 0 10px;
     border-radius: 3px;
@@ -56,4 +57,26 @@ input[type="text"] {
 
 .price .price__column {
     padding: 10px 0;
+}
+
+.autorize {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.autorize input {
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.autorize h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.autorize input[type="submit"] {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
 }

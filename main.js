@@ -1,5 +1,15 @@
 const url = "http://www.json-generator.com/api/json/get/bVTglUMROW?indent=2";
 let data;
+let isAuth = checkToken();
+
+function checkToken() {
+    const token = localStorage.getItem("token");
+    if(token === "NHGFnjhfgfht75uhfy6RHNfHYRyt6r") {
+        return true;
+    }
+    return false;
+}
+
 function getData() {
     fetch(url)
     .then(function(response) {
@@ -8,11 +18,9 @@ function getData() {
     .then(resData => {
         data = resData;
         render(data);
-        console.log(data);
     })
     
 }
-getData();
 
 function render(data) {
     let price = document.querySelector(".price__rows-container");
@@ -97,3 +105,6 @@ function filterMinMaxValue() {
     })    
     render(result);
 }
+
+if (isAuth)
+    getData();
